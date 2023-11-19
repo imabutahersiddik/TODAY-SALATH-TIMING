@@ -34,7 +34,7 @@ export default function Input({ inputRef }: InputType) {
         ref={inputRef}
         onChange={handleInput}
         value={searchInput}
-        className='rounded-md ring-2 ring-primary-400 border-0 px-8 inputRTL w-full text-xl text-primary-800'
+        className='rounded-md ring-2 ring-primary-400 border-0 px-8 w-full text-xl text-primary-800'
         placeholder='TAH CITY NAME'
         type='text'
         name='search'

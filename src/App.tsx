@@ -102,7 +102,7 @@ function App() {
         params: {
           latitude,
           longitude,
-          localityLanguage: 'ar',
+          localityLanguage: 'en',
         },
       })
       .then((response) => {
