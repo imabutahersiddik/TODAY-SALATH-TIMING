@@ -116,54 +116,54 @@ function App() {
   }
 
   const hijriDate = `(${date?.hijri.year}/${date?.hijri.month}/${date?.hijri.day})`;
-  const gregorianDate = date?.gregorian ?? '';
+  const gregorianDate = date?.gregorian;
 
-return (
-  <motion.div className='min-h-screen pt-5 px-5 sm:px-10'>
-    <header>
-      <nav>
-        <ul className='flex flex-col gap-5 py-2 '>
-          <li>
-            <LocaleClock />
-          </li>
-          <li>
-            <form onSubmit={handleSubmit}>
-              <Input inputRef={inputRef} />
-            </form>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    {isLoading ? (
-      <div className='flex justify-center mt-10'>
-        <CircleSpinner loading={isLoading} size={40} />
-      </div>
-    ) : isError ? (
-      <h1 className='p-3 mt-10 font-semibold text-3xl text-center'>❌</h1>
-    ) : date !== null ? (
-      <main className='flex flex-col gap-5 justify-center items-center my-10'>
-        <h1 className='py-2 px-10 rounded-full bg-primary-700 text-primary-200 text-xl mb-5'>
-          {locationName?.city} {',' + locationName?.country.toUpperCase()}
-        </h1>
-
-        <div className='flex flex-col items-center mb-10'>
-          <p className='text-5xl mb-3'>{date.hijri.weekday.toUpperCase()}</p>
-          <CountryClock timeZone={locationName?.timezone} />
-          <div className='flex gap-5 mt-3'>
-            <p className='font-bold text-lg'>{gregorianDate.toUpperCase()}</p>
-            <p className='font-black text-lg'>{hijriDate}</p>
-          </div>
+  return (
+    <motion.div className='min-h-screen pt-5 px-5 sm:px-10'>
+      <header>
+        <nav>
+          <ul className='flex flex-col gap-5 py-2 '>
+            <li>
+              <LocaleClock />
+            </li>
+                        <li>
+              <form onSubmit={handleSubmit}>
+                <Input inputRef={inputRef} />
+              </form>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      {isLoading ? (
+        <div className='flex justify-center mt-10'>
+          <CircleSpinner loading={isLoading} size={40} />
         </div>
+      ) : isError ? (
+        <h1 className='p-3 mt-10 font-semibold text-3xl text-center'>❌</h1>
+      ) : date !== null ? (
+        <main className='flex flex-col gap-5 justify-center items-center my-10'>
+          <h1 className='py-2 px-10 rounded-full bg-primary-700 text-primary-200 text-xl mb-5'>
+            {locationName?.city} {',' + locationName?.country.toUpperCase()}
+          </h1>
 
-        <SalathTimes salathTimes={salathTimes as SalathTimesType} />
-      </main>
-    ) : (
-      <h1 className='p-3 font-semibold text-3xl text-center'>
-        TYPE THE CITY NAME IN THE SEARCH BOX
-      </h1>
-    )}
-  </motion.div>
-);
+          <div className='flex flex-col items-center mb-10'>
+            <p className='text-5xl mb-3'>{date.hijri.weekday.toUpperCase()}</p>
+            <CountryClock timeZone={locationName?.timezone} />
+            <div className='flex gap-5 mt-3'>
+              <p className='font-bold text-lg'>{gregorianDate?.toUpperCase()}</p>
+              <p className='font-black text-lg'>{hijriDate}</p>
+            </div>
+          </div>
+
+          <SalathTimes salathTimes={salathTimes as SalathTimesType} />
+        </main>
+      ) : (
+        <h1 className='p-3 font-semibold text-3xl text-center'>
+          TYPE THE CITY NAME IN THE SEARCH BOX
+        </h1>
+      )}
+    </motion.div>
+  );
 }
 
 export default App;
