@@ -75,7 +75,7 @@ function App() {
         const { day, month, weekday, year } = data.date.hijri
         setDate({
           gregorian: data.date.readable,
-          hijri: { day, month: month.number, weekday.en, year },
+          hijri: { day, month: month.number, weekday: weekday.en, year },
         })
 
         const { Fajr, Sunrise, Dhuhr, Asr, Maghrib, Isha } = data.timings
