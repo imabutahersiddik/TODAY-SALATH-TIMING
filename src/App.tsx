@@ -148,7 +148,7 @@ return (
 
         <div className='flex flex-col items-center mb-10'>
           <p className='text-5xl mb-3'>{date.hijri.weekday.toUpperCase()}</p>
-          <CountryClock timeZone={locationName?.timezone} />
+          <CountryClock timeZone={locationName?.timezone ?? ''} />
           <div className='flex gap-5 mt-3'>
             <p className='font-bold text-lg'>{gregorianDate.toUpperCase()}</p>
             <p className='font-black text-lg'>{hijriDate}</p>
