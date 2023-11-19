@@ -12,7 +12,7 @@ type SalathTimesType = {
 }
 
 export default function SalathTimes({ salathTimes }: SalathTimesType) {
-  function toArabic(salathName: string) {
+  function toEnglish(salathName: string) {
     switch (salathName) {
       case 'Fajr':
         return 'END OF NIGHT SALATH'

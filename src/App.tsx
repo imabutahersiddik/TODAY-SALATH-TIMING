@@ -163,7 +163,7 @@ function App() {
               </h1>
 
               <div className='flex flex-col items-center mb-10'>
-                <p className='text-5xl mb-3'>{date?.hijri.weekday.ar}</p>
+                <p className='text-5xl mb-3'>{date?.hijri.weekday.en}</p>
                 <CountryClock timeZone={locationName.timezone} />
                 <div className='flex gap-5 mt-3'>
                   <p className='font-bold text-lg'>{gregorianDate}</p>
