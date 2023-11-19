@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 import axios from 'axios'
 import Input from './components/Input'
 
-import SalathTiming from './components/SalathTiming'
+import SalathTimes from './components/SalathTimes'
 import LocaleClock from './components/LocaleClock'
 import CountryClock from './components/CountryClock'
 import { CircleSpinner } from 'react-spinners-kit'
