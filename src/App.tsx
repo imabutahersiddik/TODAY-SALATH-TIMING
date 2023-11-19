@@ -20,7 +20,7 @@ type DateType = {
   hijri: {
     day: string
     month: { number: number }
-    weekday: { en: string }
+    weekday: string
     year: string
   }
 }
@@ -75,7 +75,7 @@ function App() {
         const { day, month, weekday, year } = data.date.hijri
         setDate({
           gregorian: data.date.readable,
-          hijri: { day, month: month.number, weekday, year },
+          hijri: { day, month: month.number, weekday.en, year },
         })
 
         const { Fajr, Sunrise, Dhuhr, Asr, Maghrib, Isha } = data.timings
@@ -159,14 +159,14 @@ function App() {
           ) : (
             <>
               <h1 className='py-2 px-10 rounded-full bg-primary-700 text-primary-200 text-xl mb-5'>
-                {locationName.city} {',' + locationName.country}
+                {locationName.city} {',' + locationName.country.toUpperCase()}
               </h1>
 
               <div className='flex flex-col items-center mb-10'>
-                <p className='text-5xl mb-3'>{date?.hijri.weekday.en}</p>
+                <p className='text-5xl mb-3'>{date?.hijri.weekday.en.toUpperCase()}</p>
                 <CountryClock timeZone={locationName.timezone} />
                 <div className='flex gap-5 mt-3'>
-                  <p className='font-bold text-lg'>{gregorianDate}</p>
+                  <p className='font-bold text-lg'>{gregorianDate.toUpperCase()}</p>
                   <p className='font-black text-lg'>{hijriDate}</p>
                 </div>
               </div>
