@@ -20,7 +20,7 @@ type DateType = {
   hijri: {
     day: string
     month: { number: number }
-    weekday: { ar: string }
+    weekday: { en: string }
     year: string
   }
 }

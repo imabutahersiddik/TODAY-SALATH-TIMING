@@ -58,7 +58,7 @@ export default function SalathTimes({ salathTimes }: SalathTimesType) {
             className='flex py-3 px-5 items-center justify-between flex-1 w-full bg-primary-700 text-primary-200 rounded-md text-xl'
           >
             <p>{convertTime(salath[1])}</p>
-            <p>{toArabic(salath[0])}</p>
+            <p>{toEnglish(salath[0])}</p>
           </motion.li>
         )
       })}
